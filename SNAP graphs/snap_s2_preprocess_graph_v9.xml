@@ -1,0 +1,75 @@
+<graph id="S2_Subset_Resample_v9">
+  <version>1.0</version>
+  <node id="Read">
+    <operator>Read</operator>
+    <sources/>
+    <parameters class="com.bc.ceres.binding.dom.XppDomElement">
+      <useAdvancedOptions>false</useAdvancedOptions>
+      <file>C:\OneDrive\Envance\Envance Ltd - Documents\10 R&amp;D\chelmsford\Phase 2\data\Raw Sentinel-2 Downloads\S2A_MSIL2A_20250919T110741_N0511_R137_T30UYC_20250919T152715.SAFE.zip</file>
+      <copyMetadata>true</copyMetadata>
+      <bandNames/>
+      <pixelRegion>0,0,10980,10980</pixelRegion>
+      <maskNames/>
+    </parameters>
+  </node>
+  <node id="Subset">
+    <operator>Subset</operator>
+    <sources>
+      <sourceProduct refid="Read"/>
+    </sources>
+    <parameters class="com.bc.ceres.binding.dom.XppDomElement">
+      <sourceBands>B1,B2,B3,B4,B5,B6,B7,B8,B8A,B9,B11,B12,quality_scene_classification</sourceBands>
+      <tiePointGrids/>
+      <region>0,0,0,0</region>
+      <referenceBand>B2</referenceBand>
+      <geoRegion>POLYGON ((0.2348348498344421 52.0460090637207, 0.6763047575950623 52.0460090637207, 0.6763047575950623 51.44138717651367, 0.2348348498344421 51.44138717651367, 0.2348348498344421 52.0460090637207, 0.2348348498344421 52.0460090637207))</geoRegion>
+      <subSamplingX>1</subSamplingX>
+      <subSamplingY>1</subSamplingY>
+      <fullSwath>false</fullSwath>
+      <copyMetadata>true</copyMetadata>
+    </parameters>
+  </node>
+  <node id="Resample">
+    <operator>Resample</operator>
+    <sources>
+      <sourceProduct refid="Subset"/>
+    </sources>
+    <parameters class="com.bc.ceres.binding.dom.XppDomElement">
+      <referenceBand>B2</referenceBand>
+      <targetWidth/>
+      <targetHeight/>
+      <targetResolution/>
+      <upsampling>Bilinear</upsampling>
+      <downsampling>Mean</downsampling>
+      <flagDownsampling>First</flagDownsampling>
+      <resamplingPreset/>
+      <bandResamplings/>
+      <resampleOnPyramidLevels>false</resampleOnPyramidLevels>
+    </parameters>
+  </node>
+  <node id="Write">
+    <operator>Write</operator>
+    <sources>
+      <sourceProduct refid="Resample"/>
+    </sources>
+    <parameters class="com.bc.ceres.binding.dom.XppDomElement">
+      <file>C:\OneDrive\Envance\Envance Ltd - Documents\10 R&amp;D\chelmsford\Phase 2\data\Sentinel-2 pre-processed\Subset_S2A_MSIL2A_20250919T110741_N0511_R137_T30UYC_20250919T152715_v9_resampled.tif</file>
+      <formatName>GeoTIFF-BigTIFF</formatName>
+    </parameters>
+  </node>
+  <applicationData id="Presentation">
+    <Description/>
+    <node id="Read">
+      <displayPosition x="7.0" y="97.0"/>
+    </node>
+    <node id="Subset">
+      <displayPosition x="200.0" y="97.0"/>
+    </node>
+    <node id="Resample">
+      <displayPosition x="400.0" y="97.0"/>
+    </node>
+    <node id="Write">
+      <displayPosition x="600.0" y="97.0"/>
+    </node>
+  </applicationData>
+</graph>

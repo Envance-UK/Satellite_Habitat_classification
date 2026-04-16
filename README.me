@@ -1,0 +1,12 @@
+The SNAP Graph takes all Sentinel-2 L2A optical iamgery:
+- Subsets it to a bounding box.
+- Selects all bands and the SCL bands
+- Resamples all bands to B2 (10m)
+- Create a band usign the SCL 
+- Exports as a GEOtiff
+
+The code does the following
+1 - Clips all data to the AOI
+2 - Masks clouds using the SCL band. return to 12 bands
+3 - Selects bands and calcualtes indicies
+4 - Runs unsupervised classification
