@@ -25,9 +25,23 @@ ELBOW_K_MAX = 30
 
 SUPERVISED_INPUT         = STATS_OUTPUT
 # SUPERVISED_TRAINING_DATA = r"C:\OneDrive\Envance\Envance Ltd - Documents\10 R&D\chelmsford\Phase 2\data\training_data\training_data.geojson"
-SUPERVISED_TRAINING_DATA = r"C:\OneDrive\Envance\Envance Ltd - Documents\10 R&D\chelmsford\Phase 2\data\Training_data\kmeans_derived_training_data_test_2.geojson"
-SUPERVISED_OUTPUT_DIR    = r"C:\OneDrive\Envance\Envance Ltd - Documents\10 R&D\chelmsford\Phase 2\data\supervised_classification"
-BROAD_CLASSIFICATION_OUTPUT = r"C:\OneDrive\Envance\Envance Ltd - Documents\10 R&D\chelmsford\Phase 2\data\supervised_classification\classification_broad.tif"
+# SUPERVISED_TRAINING_DATA = r"C:\OneDrive\Envance\Envance Ltd - Documents\10 R&D\chelmsford\Phase 2\data\Training_data\kmeans_derived_training_data_test_2.geojson"
+SUPERVISED_TRAINING_DATA = r"C:\OneDrive\Envance\Envance Ltd - Documents\10 R&D\chelmsford\Phase 2\data\Training_data\kmeans_derived_Catchments_three_v2.geojson"
+
+SUPERVISED_OUTPUT_DIR            = r"C:\OneDrive\Envance\Envance Ltd - Documents\10 R&D\chelmsford\Phase 2\data\supervised_classification"
+VEG_NONVEG_CLASSIFICATION_OUTPUT = r"C:\OneDrive\Envance\Envance Ltd - Documents\10 R&D\chelmsford\Phase 2\data\supervised_classification\classification_veg_nonveg.tif"
+
+VEGETATION_CLASSES = [
+    "Grassland",
+    "Cropland",
+    "Woodland and forest",
+]
+
+NON_VEGETATION_CLASSES = [
+    "Urban",
+    "Lakes",
+]
+BROAD_CLASSIFICATION_OUTPUT      = r"C:\OneDrive\Envance\Envance Ltd - Documents\10 R&D\chelmsford\Phase 2\data\supervised_classification\classification_broad_three_catchment.tif"
 TRAIN_TEST_SPLIT         = 0.8
 
 CATCHMENTS   = r"C:\OneDrive\Envance\Envance Ltd - Documents\10 R&D\chelmsford\Phase 2\Catchments\combined_catchments_EPSG_32630.geojson"

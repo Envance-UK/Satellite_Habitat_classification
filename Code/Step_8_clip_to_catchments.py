@@ -82,9 +82,14 @@ def clip_and_save(src_path, geom, out_path):
 def collect_sources():
     """
     Collect all classification GeoTIFFs grouped by type.
-    Returns dict: { "unsupervised": [...], "broad": [...], "final": [...] }
+    Returns dict: {
+        "unsupervised": [...],   ← Step 6 k-means
+        "veg_nonveg":   [...],   ← Step 7a veg/non-veg
+        "broad":        [...],   ← Step 7a broad
+        "final":        [...],   ← Step 7b final
+    }
     """
-    sources = {"unsupervised": [], "broad": [], "final": []}
+    sources = {"unsupervised": [], "veg_nonveg": [], "broad": [], "final": []}
 
     # Step 6 — unsupervised k-means (classification_k??.tif)
     unsup_dir = Path(cfg.CLASSIFICATION_OUTPUT_DIR)
@@ -92,6 +97,11 @@ def collect_sources():
         sources["unsupervised"] = sorted(
             unsup_dir.glob("classification_k*.tif")
         )
+
+    # Step 7a — veg/non-veg classification
+    veg_path = Path(cfg.VEG_NONVEG_CLASSIFICATION_OUTPUT)
+    if veg_path.exists():
+        sources["veg_nonveg"] = [veg_path]
 
     # Step 7a — broad classification
     broad_path = Path(cfg.BROAD_CLASSIFICATION_OUTPUT)
