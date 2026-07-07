@@ -48,3 +48,14 @@ TRAIN_TEST_SPLIT         = 0.8
 CATCHMENTS   = r"C:\OneDrive\Envance\Envance Ltd - Documents\10 R&D\chelmsford\Phase 2\Catchments\combined_catchments_EPSG_32630.geojson"
 RIVER_BUFFER = r"C:\OneDrive\Envance\Envance Ltd - Documents\10 R&D\chelmsford\Phase 2\data\catchment_data\Buffer_500m_EPSG_32630_dissolved_clip_to_project_AOI.geojson"
 CLIPPED_OUTPUT_DIR = r"C:\OneDrive\Envance\Envance Ltd - Documents\10 R&D\chelmsford\Phase 2\data\clipped_outputs"
+
+# ── Past_step_seven_v2 — id-based hierarchical classification (7a broad / 7b main / 7c structure) ──
+# Training GeoJSON must have: broad_habitat_type, broad_id, main_habitat_type, main_id,
+#                              Vegetation_Structure, structure_id
+V2_TRAINING_DATA = r"C:\OneDrive\Envance\Envance Ltd - Documents\10 R&D\chelmsford\Phase 2\data\ecologist_training_data\Can_wid_habitat_classification_training_data_final_v2.geojson"  # TODO: set path to the training geojson
+
+V2_OUTPUT_DIR = r"C:\OneDrive\Envance\Envance Ltd - Documents\10 R&D\chelmsford\Phase 2\data\supervised_classification_v2"
+
+# broad_id values belonging to each group — used by Step 7a's Veg/Non-Veg split stage
+VEGETATION_BROAD_IDS     = [5,2,1]  # TODO: e.g. [1, 2, 3]
+NON_VEGETATION_BROAD_IDS = [4,3]  # TODO: e.g. [4, 5]
