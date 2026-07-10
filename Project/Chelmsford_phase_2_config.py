@@ -52,10 +52,16 @@ CLIPPED_OUTPUT_DIR = r"C:\OneDrive\Envance\Envance Ltd - Documents\10 R&D\chelms
 # ── Past_step_seven_v2 — id-based hierarchical classification (7a broad / 7b main / 7c structure) ──
 # Training GeoJSON must have: broad_habitat_type, broad_id, main_habitat_type, main_id,
 #                              Vegetation_Structure, structure_id
-V2_TRAINING_DATA = r"C:\OneDrive\Envance\Envance Ltd - Documents\10 R&D\chelmsford\Phase 2\data\ecologist_training_data\Can_wid_habitat_classification_training_data_final_v2.geojson"  # TODO: set path to the training geojson
+V2_TRAINING_DATA = r"C:\OneDrive\Envance\Envance Ltd - Documents\10 R&D\chelmsford\Phase 2\data\ecologist_training_data\Can_wid_habitat_classification_training_data_final_v4.geojson"  # TODO: set path to the training geojson
 
 V2_OUTPUT_DIR = r"C:\OneDrive\Envance\Envance Ltd - Documents\10 R&D\chelmsford\Phase 2\data\supervised_classification_v2"
 
 # broad_id values belonging to each group — used by Step 7a's Veg/Non-Veg split stage
 VEGETATION_BROAD_IDS     = [5,2,1]  # TODO: e.g. [1, 2, 3]
 NON_VEGETATION_BROAD_IDS = [4,3]  # TODO: e.g. [4, 5]
+
+# ── Past_step_seven_cluster_membership_test — same pipeline as v2, but adds the
+#    k-means cluster id (from Step 6) as an extra RF feature ──────────────────
+CLUSTER_MEMBERSHIP_TIF = r"C:\OneDrive\Envance\Envance Ltd - Documents\10 R&D\chelmsford\Phase 2\data\classification\classification_k10.tif"  # TODO: path to one classification_k##.tif from Step 6, e.g. .../data/classification/classification_k10.ti
+
+CLUSTER_TEST_OUTPUT_DIR = r"C:\OneDrive\Envance\Envance Ltd - Documents\10 R&D\chelmsford\Phase 2\data\supervised_classification_v2_cluster"
